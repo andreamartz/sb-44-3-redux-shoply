@@ -22,7 +22,6 @@ function ProductDetails() {
   console.log("STORE FROM PROD DETS: ", store);
   return (
     <div className="ProductDetails">
-      <Cart />
       <Card className="ProductDetails-Card">
         <div className="ProductDetails-img-container">
           <CardImg src={image_url} alt="product photo">
