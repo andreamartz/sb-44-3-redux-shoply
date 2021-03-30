@@ -1,0 +1,17 @@
+.ProductsList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 2px solid blueviolet;
+  padding: 1rem;
+}
+
+.ProductsList-products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ProductsList-heading {
+  padding: 20px;
+}
