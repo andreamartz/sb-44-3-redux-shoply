@@ -1,0 +1,9 @@
+.ProductDetails-img-container {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.ProductDetails-Card {
+  display: flex;
+  justify-content: center;
+}

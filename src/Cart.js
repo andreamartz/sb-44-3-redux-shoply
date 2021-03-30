@@ -4,6 +4,7 @@ import {
 } from "reactstrap";
 import { useSelector, shallowEqual } from "react-redux";
 import CartIcons from "./CartIcons";
+import calcTotalCost from "./helpers";
 import "./Cart.css";
 
 function Cart() {
@@ -11,6 +12,7 @@ function Cart() {
     store => store,
     shallowEqual
   );
+  const totalCost = calcTotalCost(cart, inventory);
   const cartItemIds = Object.keys(cart);
   console.log("CART RENDERING: ", cart);
   console.log("CART ITEM IDS: ", cartItemIds);
@@ -34,7 +36,7 @@ function Cart() {
             {cartItemIds.map(id => 
               (<tr>
                 <td>{inventory[id].name}</td>
-                <td>{inventory[id].price}</td>
+                <td>${inventory[id].price.toFixed(2)}</td>
                 <td>{cart[id]}</td>
                 <td>
                   <CartIcons id={id}/>
@@ -43,6 +45,9 @@ function Cart() {
             )}
           </tbody>
         </Table>
+        <div className="Cart-totalCost">
+          Total Cost: ${totalCost}
+        </div>
       </div>
     )
   }
